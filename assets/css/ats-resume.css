@@ -1,0 +1,176 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #f3f5f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 11pt;
+  line-height: 1.45;
+}
+
+a {
+  color: #0645ad;
+}
+
+.resume-actions {
+  max-width: 900px;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.resume-actions a,
+.resume-actions button {
+  border: 1px solid #1f5f99;
+  border-radius: 4px;
+  padding: 10px 14px;
+  background: #fff;
+  color: #164f82;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.resume-actions button {
+  background: #164f82;
+  color: #fff;
+}
+
+.resume-document {
+  width: min(900px, calc(100% - 32px));
+  margin: 20px auto 40px;
+  padding: 48px 56px;
+  background: #fff;
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26pt;
+  letter-spacing: 0.02em;
+}
+
+.headline {
+  margin: 4px 0 8px;
+  font-size: 15pt;
+  font-weight: 700;
+}
+
+address {
+  font-style: normal;
+}
+
+section {
+  margin-top: 20px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid #111;
+  font-size: 14pt;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 13px 0 2px;
+  font-size: 12pt;
+}
+
+p {
+  margin: 4px 0;
+}
+
+.job-meta {
+  font-weight: 700;
+}
+
+ul {
+  margin: 5px 0 10px;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 3px;
+}
+
+article {
+  break-inside: avoid;
+}
+
+@media (max-width: 700px) {
+  .resume-actions {
+    margin: 12px 16px 0;
+  }
+
+  .resume-document {
+    width: 100%;
+    margin: 12px 0;
+    padding: 28px 20px;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 22pt;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
+
+  :root,
+  body {
+    background: #fff;
+    font-size: 9.5pt;
+    line-height: 1.32;
+  }
+
+  .resume-actions {
+    display: none;
+  }
+
+  .resume-document {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  a {
+    color: #111;
+    text-decoration: none;
+  }
+
+  section {
+    margin-top: 13px;
+  }
+
+  h1 {
+    font-size: 22pt;
+  }
+
+  h2 {
+    font-size: 12pt;
+  }
+
+  h3 {
+    font-size: 10.5pt;
+  }
+}
