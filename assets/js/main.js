@@ -43,6 +43,49 @@
   }
 
   /**
+   * Animate transitions between portfolio pages
+   */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const pageContent = select('main')
+
+  if (pageContent && !prefersReducedMotion) {
+    window.addEventListener('pageshow', () => {
+      document.body.classList.remove('page-leaving')
+      select('.nav-link-clicked', true).forEach(link => link.classList.remove('nav-link-clicked'))
+    })
+
+    requestAnimationFrame(() => {
+      document.body.classList.add('page-entered')
+    })
+
+    on('click', '#navbar .nav-link', function(e) {
+      const destination = new URL(this.href, window.location.href)
+      const currentPage = new URL(window.location.href)
+
+      if (
+        e.defaultPrevented ||
+        e.button !== 0 ||
+        e.metaKey ||
+        e.ctrlKey ||
+        e.shiftKey ||
+        e.altKey ||
+        destination.origin !== currentPage.origin ||
+        destination.href === currentPage.href
+      ) {
+        return
+      }
+
+      e.preventDefault()
+      document.body.classList.add('page-leaving')
+      this.classList.add('nav-link-clicked')
+
+      window.setTimeout(() => {
+        window.location.href = destination.href
+      }, 260)
+    }, true)
+  }
+
+  /**
    * Navbar links active state on scroll
    */
   let navbarlinks = select('#navbar .scrollto', true)
