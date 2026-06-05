@@ -13,6 +13,7 @@ body {
   margin: 0;
   font-size: 11pt;
   line-height: 1.45;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -110,6 +111,67 @@ li {
 
 article {
   break-inside: avoid;
+}
+
+.theme-toggle-floating {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: 1px solid #1f5f99;
+  border-radius: 50px;
+  background: #fff;
+  color: #164f82;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+html[data-theme="dark"] {
+  color: #dce4ec;
+  background: #0f1720;
+}
+
+html[data-theme="dark"] body {
+  background: #0f1720;
+  color: #dce4ec;
+}
+
+html[data-theme="dark"] a {
+  color: #7abcf2;
+}
+
+html[data-theme="dark"] .resume-document {
+  background: #18232e;
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .resume-actions a,
+html[data-theme="dark"] .theme-toggle-floating {
+  border-color: #4d89bb;
+  background: #18232e;
+  color: #9bcef7;
+}
+
+html[data-theme="dark"] h2 {
+  border-bottom-color: #aab7c3;
+}
+
+@media print {
+  .theme-toggle-floating {
+    display: none;
+  }
+
+  html[data-theme="dark"],
+  html[data-theme="dark"] body,
+  html[data-theme="dark"] .resume-document {
+    color: #111;
+    background: #fff;
+  }
 }
 
 @media (max-width: 700px) {

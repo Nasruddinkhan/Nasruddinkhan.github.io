@@ -12,6 +12,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  background: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -230,6 +232,55 @@ h6 {
 .nav-menu a:hover span,
 .nav-menu li:hover>a span {
   display: block;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  margin-bottom: 8px;
+  padding: 10px 18px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 50px;
+  background: #f2f3f5;
+  color: #45505b;
+  font: inherit;
+  cursor: pointer;
+  transition: width 0.3s ease, color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle i {
+  flex: 0 0 auto;
+  font-size: 20px;
+}
+
+.theme-toggle span {
+  padding-left: 7px;
+}
+
+.theme-toggle:hover {
+  color: #fff;
+  background: #0563bb;
+}
+
+@media (min-width: 992px) {
+  .theme-toggle {
+    width: 56px;
+  }
+
+  .theme-toggle span {
+    display: none;
+  }
+
+  .theme-toggle:hover {
+    width: 100%;
+  }
+
+  .theme-toggle:hover span {
+    display: block;
+  }
 }
 
 /**
@@ -906,6 +957,118 @@ main {
 
 .contact-card a {
   overflow-wrap: anywhere;
+}
+
+/*--------------------------------------------------------------
+# Dark theme
+--------------------------------------------------------------*/
+html[data-theme="dark"] body {
+  color: #d8e0e8;
+  background: #0f1720;
+}
+
+html[data-theme="dark"] #hero:before {
+  background: rgba(10, 17, 25, 0.86);
+}
+
+html[data-theme="dark"] #hero h1,
+html[data-theme="dark"] #hero p,
+html[data-theme="dark"] #hero .social-links a,
+html[data-theme="dark"] .hero-summary,
+html[data-theme="dark"] .section-title h2,
+html[data-theme="dark"] .resume .resume-title,
+html[data-theme="dark"] .resume .resume-item h4,
+html[data-theme="dark"] .contact .info h4,
+html[data-theme="dark"] .contact .info h3,
+html[data-theme="dark"] .page-hero h1,
+html[data-theme="dark"] .project-card h2,
+html[data-theme="dark"] .contact-card h2 {
+  color: #e8eef5;
+}
+
+html[data-theme="dark"] .about .content h3,
+html[data-theme="dark"] .contact .info p,
+html[data-theme="dark"] .page-hero p:not(.eyebrow) {
+  color: #aebdca;
+}
+
+html[data-theme="dark"] .page-hero {
+  background: linear-gradient(135deg, #131e29 0%, #172636 100%);
+}
+
+html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] .education-card,
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .contact-card,
+html[data-theme="dark"] .contact .info {
+  border-color: #2b3b49;
+  background: #18232e;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.24);
+}
+
+html[data-theme="dark"] .project-card:hover,
+html[data-theme="dark"] .contact-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.36);
+}
+
+html[data-theme="dark"] .project-domain,
+html[data-theme="dark"] .contact .info i {
+  background: #17334a;
+  color: #72b7f2;
+}
+
+html[data-theme="dark"] .resume .resume-item::before {
+  background: #0f1720;
+}
+
+html[data-theme="dark"] .resume .resume-item h5,
+html[data-theme="dark"] .skills .progress-bar-wrap,
+html[data-theme="dark"] #footer {
+  background: #18232e;
+  color: #d8e0e8;
+}
+
+html[data-theme="dark"] .section-title h2::before {
+  background: #3a4957;
+}
+
+html[data-theme="dark"] .nav-menu a,
+html[data-theme="dark"] .nav-menu a:focus,
+html[data-theme="dark"] .theme-toggle {
+  color: #d8e0e8;
+  background: #1c2935;
+}
+
+html[data-theme="dark"] .nav-menu a span,
+html[data-theme="dark"] .nav-menu a:focus span {
+  color: #d8e0e8;
+}
+
+html[data-theme="dark"] .nav-menu a:hover,
+html[data-theme="dark"] .nav-menu .active,
+html[data-theme="dark"] .nav-menu .active:focus,
+html[data-theme="dark"] .nav-menu li:hover>a,
+html[data-theme="dark"] .theme-toggle:hover {
+  color: #fff;
+  background: #1674c4;
+}
+
+html[data-theme="dark"] .nav-menu a:hover span,
+html[data-theme="dark"] .nav-menu .active span,
+html[data-theme="dark"] .nav-menu .active:focus span,
+html[data-theme="dark"] .nav-menu li:hover>a span {
+  color: #fff;
+}
+
+html[data-theme="dark"] .mobile-nav-toggle {
+  color: #e8eef5;
+}
+
+@media (max-width: 991px) {
+  html[data-theme="dark"] #header {
+    background: #111c26;
+    border-right-color: #2b3b49;
+  }
 }
 
 @media (max-width: 991px) {
